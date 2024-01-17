@@ -1,0 +1,3 @@
+evlt. Fehlermeldungen:
+
+Bei Wechsel zu Linuxsystemen evtl LF/ CRLF beachten.
