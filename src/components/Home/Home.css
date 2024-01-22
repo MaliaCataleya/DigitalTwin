@@ -1,102 +1,134 @@
-.site {
+#site {
+  height: 100vh;
   text-align: center;
   background-color: #F1F5F7;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: black;
   position: relative;
 }
 
 #sidebar {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 25vmin;
-  height: 100%;
+  width: 30vmin;
+  height: 100.3%;
   background-color: rgb(2, 74, 146);
   color: white;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+#pages {
+  display: flex;
+  flex-direction: column;
+}
+
+#other {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0.2vmin;
 }
 
 .buttonSide {
   display: flex;
   align-items: center;
-  border-width: 30px 0px 2px 30px;
+  border-width: 3vmin 0vmin 0.5vmin 1vmin;
   border-color: transparent transparent white transparent;
   border-style: solid;
   background-color: transparent;
   color: white;
-  width: calc(100% - 30px);
-  font-size: calc(10px + 1vmin);
+  width: 100%;
+  font-size: 2vmin;
   cursor: pointer;
-}
-
-.buttonSide p{
-  border-width: 0px 0px 0px 15px;
-  border-color: transparent;
-  border-style: solid;
-}
-
-#logout {
-  position: absolute;
-  bottom: 5px;
-}
-
-#settings {
-  position: absolute;
-  bottom: 94px;
-}
-
-.header {
-  position: absolute;
-  top: 20px;
-  left: 35vmin;
-  border-color: transparent transparent transparent rgb(2, 74, 146);
-  border-style: solid;
-  border-width: 10px;
-}
-
-.header p {
-  text-align: start;
-  border-width: 0px 0px 0px 30px;
-  border-color: transparent;
-  border-style: solid;
-}
-
-.logo {
-  height: 15vmin;
-  pointer-events: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.middle {
-  width: 100vmin;
-  height: 50vmin;
-  display: flex;
-  flex-wrap: wrap;
+  height: 2vmin;
   align-items: center;
+}
+
+.buttonSide * {
+  border-width: 0vmin 0vmin 1.5vmin 3vmin;
+  border-color: transparent;
+  border-style: solid;
+  margin: 0px;
+}
+
+
+#content {
+  width: 85%;
+  height: 100%;
+  background-color: #F1F5F7;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 17%;
+  display: flex;
+  justify-content: space-between;
+  top: 3%;
+}
+
+#logo {
+  position: relative;
+  width: 17vmin;
+  height: auto;
+  right: 4%;
+}
+
+#headline-wrap {
+  position: relative;
+  background-color: rgb(2, 74, 146);
+  padding: 0% 0% 0% 0.5%;
+  height: 100%;
+  width: 70%;
+  top: 2%;
+  left: 4%;
+}
+
+#headline {
+  position: absolute;
+  background-color: #F1F5F7;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  font-size: 3vmin;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
+#headline p {
+  width: 100%;
+  height: 24%;
+  font-size: 3vmin;
+  text-align: start;
+  margin: 0px;
+}
+
+#middle {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  top: 3%;
+  height: 83%;
+  width: 70%;
+}
+
 .button {
-  width: 40vmin;
-  height: 20vmin;
+  width: 20vmin;
+  height: 7vmin;
   color: black;
   border-radius: 20px;
-  padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
     7px 7px 20px 0px rgba(0, 0, 0, .1),
@@ -104,13 +136,13 @@
   outline: none;
   background: white;
   line-height: 42px;
-  padding: 0;
+  padding: 10px 25px;
   border: none;
-  font-size: calc(10px + 2vmin);
+  font-size: 2vmin;
+  border-width: 0.2vmin 0.2vmin 0.2vmin 0.2vmin;
 }
 
 .button span {
-  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -119,67 +151,9 @@
   justify-content: center;
 }
 
-.button:before,
-.button:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: rgb(2, 74, 146);
-  transition: all 0.3s ease;
-}
-
-.button:before {
-  height: 0%;
-  width: 2px;
-}
-
-.button:after {
-  width: 0%;
-  height: 2px;
-}
-
 .button:hover {
-  background: transparent;
-  box-shadow: none;
-}
-
-.button:hover:before {
-  height: 100%;
-}
-
-.button:hover:after {
-  width: 100%;
-}
-
-.button span:hover {
-  color: rgb(3, 102, 201);
-}
-
-.button span:before,
-.button span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: rgb(2, 74, 146);
-  transition: all 0.3s ease;
-}
-
-.button span:before {
-  width: 2px;
-  height: 0%;
-}
-
-.button span:after {
-  width: 0%;
-  height: 2px;
-}
-
-.button span:hover:before {
-  height: 100%;
-}
-
-.button span:hover:after {
-  width: 100%;
+  background-color: #F1F5F7;
+  border-width: 0.2vmin 0.2vmin 0.2vmin 0.2vmin;
+  border-color: rgb(2, 74, 146);
+  border-style: solid;
 }

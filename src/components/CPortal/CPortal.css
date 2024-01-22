@@ -1,19 +1,55 @@
+#c-middle {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    top: 3%;
+    left: 2%;
+    height: 83%;
+    width: 70%;
+    align-items: center;
+}
+
+#wrap {
+    height: calc(83% - 50vmin);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#table-head {
+    align-self: flex-start;
+    text-align: start;
+    width: 100%;
+}
+
+#head {
+    width: 100%;
+    font-size: 3vmin;
+    align-self: flex-start;
+    margin: 0px;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    height: 50vmin;
     border-collapse: separate;
-    border: solid black 1px;
-    border-radius: 20px 20px 0px 0px;
-    font-size: calc(10px + 1vmin);
+    border: solid black 0.2vmin;
+    border-radius: 2vmin 2vmin 0px 0px;
+    font-size: 2vmin;
+    align-self: flex-start;
 }
 
 td,
 th {
-    border-left: solid black 1px;
-    border-top: solid black 1px;
+    border-left: solid black 0.1vmin;
+    border-top: solid black 0.1vmin;
     text-align: left;
-    padding: 8px;
 }
 
 th {
@@ -29,19 +65,6 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-.c-middle {
-    position: absolute;
-    left: 20%;
-    top: 25%;
-    width: 150vmin;
-    height: 65vmin;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
-}
-
 .edit {
     display: flex;
     justify-content: space-between;
@@ -49,24 +72,21 @@ tr:nth-child(even) {
 }
 
 .c-bar {
-    margin-top: -70px;
     display: block;
-    height: 0.5px;
+    height: 0.1vmin;
     width: 100%;
     background: black;
+    align-self: flex-start;
 }
 
 .set {
-    width: 130px;
-    height: 40px;
+    width: 10vmin;
+    height: 5vmin;
     color: black;
-    border-radius: 20px;
-    padding: 10px 25px;
+    border-radius: 2vmin;
     font-family: 'Lato', sans-serif;
-    font-weight: 500;
     background: white;
     cursor: pointer;
-    transition: all 0.3s ease;
     position: relative;
     display: inline-block;
     box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
@@ -75,13 +95,14 @@ tr:nth-child(even) {
     outline: none;
     border: none;
     color: #000;
+    font-size: 2vmin;
 }
 
 #set-buttons {
-    margin-top: -40px;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-self: flex-end;
 }
 
 #filter {
@@ -92,5 +113,5 @@ tr:nth-child(even) {
 
 #add {
     position: relative;
-    left: 525px;
+    left: 20vmin;
 }

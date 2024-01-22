@@ -20,3 +20,72 @@
           <FontAwesomeIcon icon="gear" />
           <p>Settings</p>
         </button>
+
+
+.c-middle {
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    width: 150vmin;
+    height: 65vmin;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+// login
+.login-header {
+  position: absolute;
+  top: 20px;
+  left: 10vmin;
+  border-color: transparent transparent transparent rgb(2, 74, 146);
+  border-style: solid;
+  border-width: 10px;
+}
+
+.login-header p {
+  text-align: start;
+  border-width: 0px 0px 0px 30px;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.login-site {
+  text-align: center;
+  background-color: #F1F5F7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  position: relative;
+}
+
+.logo {
+  height: 15vmin;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  height: 40vmin;
+}
+
+.middle {
+  position: relative;
+  width: 70%;
+  height: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
