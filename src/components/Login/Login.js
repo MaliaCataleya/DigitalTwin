@@ -1,13 +1,12 @@
 import logo from '../../assets/mercedes.png';
 import './Login.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 
 function Login() {
   return (
     <div className="login-site">
       <div className="login-header">
-        <p>Mercedes-Benz Metaverse</p>
+        <p>Mercedes-Benz Connected Simulation</p>
         <p>Login</p>
       </div>
       <img src={logo} className="logo" alt="logo" />
@@ -25,12 +24,12 @@ function Login() {
           <label>User</label>
         </div>
         <div class="group">
-          <input type="text" required></input>
+          <input type="password" required></input>
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Password</label>
         </div>
-        <Link to="/login/home" id="submit">Submit</Link>
+        <Link to="/login/home" className="s-button">Submit</Link>
       </div>
     </div>
   );

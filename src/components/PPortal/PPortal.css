@@ -29,6 +29,10 @@ tr:nth-child(even) {
     background-color: white;
 }
 
+#table-head {
+    font-size: 2vmin;
+}
+
 .c-middle {
     position: absolute;
     left: 20%;
@@ -51,7 +55,7 @@ tr:nth-child(even) {
 .c-bar {
     margin-top: -70px;
     display: block;
-    height: 0.5px;
+    height: 1px;
     width: 100%;
     background: black;
 }
@@ -75,6 +79,7 @@ tr:nth-child(even) {
     outline: none;
     border: none;
     color: #000;
+    font-size: 1.5vmin;
 }
 
 #set-buttons {
@@ -88,9 +93,11 @@ tr:nth-child(even) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.5vmin;
 }
 
 #add {
     position: relative;
     left: 525px;
+    font-size: 1.5vmin;
 }

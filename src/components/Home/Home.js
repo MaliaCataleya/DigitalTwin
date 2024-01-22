@@ -13,7 +13,7 @@ function Home() {
         </Link>
       </div>
       <div className="header">
-        <p>Mercedes-Benz Metaverse</p>
+        <p>Mercedes-Benz Connected Simulation</p>
         <p>Asset and Contract Administration</p>
       </div>
       <img src={logo} className="logo" alt="logo" />

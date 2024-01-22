@@ -9,15 +9,17 @@ import PPortal from './components/PPortal/PPortal';
 import Settings from './components/Settings/Settings';
 import Dashboard from './components/Dashboard/Dashboard';
 import Asset from './components/Asset/Asset';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faUser, faGear } from '@fortawesome/free-solid-svg-icons'
+import AddC from './components/AddC/AddC';
+import AddP from './components/AddP/AddP';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faMagnifyingGlass, faGear, faPlus, faFilter, faHouse, faChartLine, faFile, faPenToSquare, faUser, faUpload, faDownload } from '@fortawesome/free-solid-svg-icons';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
-library.add(fab, faUser, faGear)
+library.add(fab, faUser, faGear, faPlus, faMagnifyingGlass, faFilter, faPenToSquare, faHouse, faChartLine, faFile, faUpload, faDownload)
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
   {
     path: "/assets",
     element: <Asset />
+  },
+  {
+    path: "/addC",
+    element: <AddC />
+  },
+  {
+    path: "/addP",
+    element: <AddP />
   }
 ]);
 

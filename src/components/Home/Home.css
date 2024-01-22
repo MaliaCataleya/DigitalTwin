@@ -34,12 +34,17 @@
   width: calc(100% - 30px);
   font-size: calc(10px + 1vmin);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .buttonSide p{
   border-width: 0px 0px 0px 15px;
   border-color: transparent;
   border-style: solid;
+}
+
+.active {
+  background-color: rgb(49, 112, 175);
 }
 
 #logout {
@@ -107,6 +112,8 @@
   padding: 0;
   border: none;
   font-size: calc(10px + 2vmin);
+  color: rgb(2, 74, 146);
+  text-decoration: none;
 }
 
 .button span {

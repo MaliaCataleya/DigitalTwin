@@ -1,12 +1,9 @@
 import logo from '../../assets/mercedes.png';
-import asset1 from '../../assets/asset1.png';
-import asset2 from '../../assets/asset2.png';
-import asset3 from '../../assets/asset3.png';
-import './Asset.css';
+import './AddC.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 
-function Asset() {
+function Add() {
     return (
         <div className="site">
             <div id="sidebar">
@@ -18,7 +15,7 @@ function Asset() {
                     <FontAwesomeIcon icon="fa-chart-line" />
                     <p>Dashboard</p>
                 </Link>
-                <Link to="/assets" className="buttonSide active">
+                <Link to="/assets" className="buttonSide">
                     <FontAwesomeIcon icon="fa-file" />
                     <p>Assets</p>
                 </Link>
@@ -26,12 +23,12 @@ function Asset() {
                     <FontAwesomeIcon icon="upload" />
                     <p>Provider Portal</p>
                 </Link>
-                <Link to="/consumer" className="buttonSide">
-                    <FontAwesomeIcon icon="gear" />
+                <Link to="/consumer" className="buttonSide active">
+                    <FontAwesomeIcon icon="download" />
                     <p>Consumer Portal</p>
                 </Link>
                 <Link to="/settings" className="buttonSide" id="settings">
-                    <FontAwesomeIcon icon="download" />
+                    <FontAwesomeIcon icon="gear" />
                     <p>Settings</p>
                 </Link>
                 <Link to="/" className="buttonSide" id="logout">
@@ -41,16 +38,26 @@ function Asset() {
             </div>
             <div className="header">
                 <p>Mercedes-Benz Connected Simulation</p>
-                <p>Assets</p>
+                <p>Consume new Asset</p>
             </div>
             <img src={logo} className="logo" alt="logo" />
-            <div className="c-middle">
-            <img src={asset1} alt="asset 1" id="img-asset"></img>
-            <img src={asset2} alt="asset 2" id="img-asset"></img>
-            <img src={asset3} alt="asset 3" id="img-asset"></img>
+            <div className="middle">
+                <div>
+                    <p id="fetching">Fetching available Assets from Marketplace</p>
+                    <div class="l-1 letter">L</div>
+                    <div class="l-2 letter">o</div>
+                    <div class="l-3 letter">a</div>
+                    <div class="l-4 letter">d</div>
+                    <div class="l-5 letter">i</div>
+                    <div class="l-6 letter">n</div>
+                    <div class="l-7 letter">g</div>
+                    <div class="l-8 letter">.</div>
+                    <div class="l-9 letter">.</div>
+                    <div class="l-10 letter">.</div>
+                </div>
             </div>
         </div>
     );
 }
 
-export default Asset
+export default Add
