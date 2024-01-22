@@ -1,0 +1,96 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-collapse: separate;
+    border: solid black 1px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: calc(10px + 1vmin);
+}
+
+td,
+th {
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    border-top: none;
+}
+
+td:first-child,
+th:first-child {
+    border-left: none;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.c-middle {
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    width: 150vmin;
+    height: 65vmin;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-bar {
+    margin-top: -70px;
+    display: block;
+    height: 0.5px;
+    width: 100%;
+    background: black;
+}
+
+.set {
+    width: 130px;
+    height: 40px;
+    color: black;
+    border-radius: 20px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    border: none;
+    color: #000;
+}
+
+#set-buttons {
+    margin-top: -40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#add {
+    position: relative;
+    left: 525px;
+}
