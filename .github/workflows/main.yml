@@ -1,0 +1,60 @@
+name: Azure application
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  docker:
+        runs-on: ubuntu-latest
+        steps:
+          -
+            name: Checkout
+            uses: actions/checkout@v3
+          -
+            name: Set up QEMU
+            uses: docker/setup-qemu-action@v2
+          -
+            name: Set up Docker Buildx
+            uses: docker/setup-buildx-action@v2
+          -
+            name: Login to Docker Hub
+            uses: docker/login-action@v2
+            with:
+              username: ${{ secrets.DOCKERHUB_USERNAME }}
+              password: ${{ secrets.DOCKERHUB_TOKEN }}
+          -
+            name: Build and push Frontend
+            uses: docker/build-push-action@v4
+            with:
+              context: ./frontend
+              push: true
+              tags: catabiana/azurefront-${{ github.run_number }}
+  modifygit:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: changing the deployment of git repo
+        with:
+          repository: 'MaliaCataleya/K8Azure'
+          token: ${{ secrets.GIT_PASSWORD }}
+      - name: modify the image
+        run: |
+          git config user.email mauffsarah@gmail.com
+          git config user.name MaliaCataleya
+          pwd
+          cat deployment.yaml
+          pwd
+          sed -i "s+catabiana/azurefront.*+catabiana/azurefront-$RUN_NUMBER+g" deployment.yaml
+          cat deployment.yaml
+          git add .
+          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
+          git push origin main
+        env:
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+          RUN_NUMBER: ${{ github.run_number }}
