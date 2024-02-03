@@ -30,7 +30,6 @@ jobs:
             name: Build and push Frontend
             uses: docker/build-push-action@v4
             with:
-              context: ./frontend
               push: true
               tags: catabiana/azurefront-${{ github.run_number }}
   modifygit:
