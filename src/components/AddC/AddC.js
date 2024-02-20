@@ -3,6 +3,36 @@ import './AddC.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 
+var response;
+
+const fetchCatalog = () => {
+    fetch('http://127.0.0.1:5000/edc/consumer')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    const outputC = document.getElementById("outputC");
+    loopPolling(outputC, "c");
+}
+
+async function loopPolling(elem, url) {
+    var apiEnd = "http://127.0.0.1:5000/subscribe/" + url;
+    response = await fetch(apiEnd);
+    let text = await response.text();
+    // Experimental: Replace the initial lines containing the path and all that wonky stuff
+    text = text.replaceAll(/^[\s\S]*?(?=(INFO|DEBUG|WARNING|SEVERE))/gm, "")
+    // Simple regex to:
+    // 1. Add linebreak in form of <br> in front of log levels
+    // 2. Color the log Levels
+    // This introduces the "issue" of the first line being empty due to a starting <br>
+    // However this seemed more readable to me so I left it in
+    elem.innerHTML = text
+        .replaceAll(/\ *?INFO\ */gm, "<br /><a style='color:green'>INFO</a> ")
+        .replaceAll(/\ *?WARNING\ */gm, "<br /><a style='color:orange'>WARNING</a> ")
+        .replaceAll(/\ *?DEBUG\ */gm, "<br /><a style='color:purple'>DEBUG</a>  ")
+        .replaceAll(/\ *?SEVERE\ */gm, "<br /><a style='color:red'>SEVERE</a>  ")
+    setTimeout(function () { loopPolling(elem, url) }, 2000);
+}
+
 function Add() {
     return (
         <div className="site">
@@ -42,19 +72,8 @@ function Add() {
             </div>
             <img src={logo} className="logo" alt="logo" />
             <div className="middle">
-                <div>
-                    <p id="fetching">Fetching available Assets from Marketplace</p>
-                    <div class="l-1 letter">L</div>
-                    <div class="l-2 letter">o</div>
-                    <div class="l-3 letter">a</div>
-                    <div class="l-4 letter">d</div>
-                    <div class="l-5 letter">i</div>
-                    <div class="l-6 letter">n</div>
-                    <div class="l-7 letter">g</div>
-                    <div class="l-8 letter">.</div>
-                    <div class="l-9 letter">.</div>
-                    <div class="l-10 letter">.</div>
-                </div>
+                <button onClick={fetchCatalog}>Fetch Catalog!</button>
+                <div id="outputC" className="output multiline">Output Consumer</div>
             </div>
         </div>
     );

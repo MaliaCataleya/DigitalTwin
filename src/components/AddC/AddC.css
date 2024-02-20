@@ -62,3 +62,22 @@
         opacity: 1;
     }
 }
+
+.output {
+    width: 15vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.multiline {
+    white-space: pre-wrap;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-radius: 8px;
+    background-color: #50505059;
+    font-size: x-small;
+}
